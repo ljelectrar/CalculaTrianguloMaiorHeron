@@ -11,30 +11,28 @@ public class Main {
         Locale.setDefault(Locale.US);
 
         // Instanciação
-        MaiorAreaTriangulo TringA = new MaiorAreaTriangulo();
-        MaiorAreaTriangulo TriangB = new MaiorAreaTriangulo();
+        MaiorAreaTriangulo triangA = new MaiorAreaTriangulo();
+        MaiorAreaTriangulo triangB = new MaiorAreaTriangulo();
 
         // Pega os dados informados pelo usuário através do consoloe
         System.out.println("Insira os valores do PRIMEIRO triângulo: ");
-        TringA.A = sc.nextDouble();
-        TringA.B = sc.nextDouble();
-        TringA.C = sc.nextDouble();
+        double triangA_A = sc.nextDouble();
+        double triangA_B = sc.nextDouble();
+        double triangA_C = sc.nextDouble();
 
         System.out.println("Insira os valores do SEGUNDO triângulo: ");
-        TriangB.A = sc.nextDouble();
-        TriangB.B = sc.nextDouble();
-        TriangB.C = sc.nextDouble();
+        double triangB_A = sc.nextDouble();
+        double triangB_B = sc.nextDouble();
+        double triangB_C = sc.nextDouble();
 
         // Faz o cálculo das áreas dos triângulos
-        double p = (TringA.A + TringA.B + TringA.C) / 2.0;
-        double areaPrimeiro = Math.sqrt(p * (p - TringA.A) * (p - TringA.B) * (p - TringA.C));
-
-        p = (TriangB.A + TriangB.B + TriangB.C) / 2.0;
-        double areaSegundo = Math.sqrt(p * (p - TringA.A) * (p - TringA.B) * (p - TringA.C));
+        double areaPrimeiro = triangA.area(triangA_A, triangA_B, triangA_C);
+        double areaSegundo = triangB.area(triangB_A, triangB_B, triangB_C);
 
         System.out.printf("Área do Primeiro triângulo %.2f%n", areaPrimeiro);
         System.out.printf("Área do SEGUNDO triângulo %.2f%n", areaSegundo);
 
+        System.out.println();
         // Testa qual área é maior ou se são iguais.
         if (areaPrimeiro == areaSegundo) {
             System.out.println("Os triângulos tem áreas iguais!");
